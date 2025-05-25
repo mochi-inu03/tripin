@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_05_25_033516) do
-  create_table "spots", charset: "utf8mb3", force: :cascade do |t|
+ActiveRecord::Schema[7.1].define(version: 2025_05_25_060206) do
+  create_table "spots", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "title", null: false
-    t.text "description", null: false
-    t.string "image", null: false
+    t.string "title"
+    t.text "description"
+    t.string "image"
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.integer "category_id", null: false
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_spots_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb3", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "nickname"
     t.string "email"
     t.string "encrypted_password"
