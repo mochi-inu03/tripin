@@ -1,0 +1,13 @@
+<h1>スポット一覧</h1>
+
+<% @spots.each do |spot| %>
+  <div class="spot-card">
+    <h2>タイトル: <%= spot.title %></h2>
+    <p>説明: <%= spot.description %></p>
+    <p>住所: <%= spot.address.presence || "未入力" %></p>
+    <p>緯度: <%= spot.latitude || "未設定" %></p>
+    <p>経度: <%= spot.longitude || "未設定" %></p>
+    <p>カテゴリーID: <%= spot.category_id %></p>
+    <hr>
+  </div>
+<% end %>
